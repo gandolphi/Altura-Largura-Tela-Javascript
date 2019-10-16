@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #conteudo{
+                background-color: aqua;
+            }
+        </style>
+        <meta charset="utf-8" />
+        <title>Dimensões da página</title>
+        <script>
+            function Page(event)
+            {
+                var texto = "LARGURA: " + document.body.offsetWidth + "<br>";
+                texto = texto + "ALTURA: " + document.body.offsetHeight;
+                RESULTADO.innerHTML = texto;
+                // LARGURA E ALTURA SÓ DO CONTEÚDO DA PÁGINA
+            }
+            function Screen(event)
+            {
+                var texto = "LARGURA: " + screen.width + "<br>";
+                texto = texto + "ALTURA: " + screen.height;
+                RESULTADO.innerHTML = texto; 
+                // LARGURA E ALTURA DA TELA DO USUÁRIO (RESOLUÇÃO)  
+            }
+            function Client(event)
+            {
+                var texto = "X: " + event.clientX + "<br>";
+                texto = texto + "Y: " + event.clientY;
+                RESULTADO2.innerHTML = texto;    
+            }  
+        </script>
+    </head>
+<body onmousemove="Client(event);">
+    <div id="conteudo">
+        <button onclick="Page(event);">PAGE</button>
+        <br>
+        <button onclick="Screen(event);">SCREEN</button>
+        <br>
+        <br>
+        <div id="RESULTADO">  </div>
+        <div id="RESULTADO2">  </div>
+    </div>
+</body>
+</html>
